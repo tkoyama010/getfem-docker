@@ -19,7 +19,8 @@ RUN apt-get install -y --no-install-recommends texlive
 RUN apt-get install -y --no-install-recommends xzdec
 RUN apt-get install -y --no-install-recommends fig2ps
 RUN apt-get install -y --no-install-recommends gv
-RUN pip install -r requirements.txt
+RUN apt-get install -y --no-install-recommends python3-pip
+RUN pip3 install -r requirements.txt
 RUN bash autogen.sh
 RUN ./configure --with-pic
 RUN make -j8
